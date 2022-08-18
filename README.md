@@ -3,7 +3,7 @@ Step by step guide to building a web scraper with Python and JavaScript
 
 ## Building a Web Scraper with Python
 
-## STEP 1. How to get the HTML?
+### STEP 1. How to get the HTML?
 The first step to building a web scraper is getting the HTML of a page. We will be using the ```requests``` library to get the HTML. It allows us to send a request and get a response. This can be installed using pip or pip3, depending on your Python installation.
 
 ```bash
@@ -46,7 +46,7 @@ You will see that the output will be the entire HTML of the page. Here is the pa
 
 Now that we have the HTML ready, it’s time to move on to the next step.
 
-## STEP 2. How to parse the HTML?
+### STEP 2. How to parse the HTML?
 
 Now this HTML response, which currently is a string, needs to be parsed into an object. The most important thing here is that we should be able to easily query this object to get the desired data.
 
@@ -76,7 +76,7 @@ soup = BeautifulSoup(response.text,'html.parser')
 Note that we are specifying the parsers as ```html.parser```. We can, however, use a different parser like ```lxml```.
 Now that we have the parsed object, we can now extract the data we need.
 
-## STEP 3. How to extract data?
+### STEP 3. How to extract data?
 
 BeautifulSoup provides an easy way to navigate the data structure. Here are some examples and the output:
 
@@ -102,7 +102,7 @@ Once we know where the text is located, we have two options:
 1. We can use the ```find()``` or ```find_all()``` method. 
 2. Alternatively, we can use the ```select()``` method.
 
-### Using find method with Beautiful Soup
+#### Using find method with Beautiful Soup
 
 The only difference between the ```find()``` and ```find_all()``` methods is that the ```find()``` method returns the first match, while ```find_all()``` returns them all.
 
@@ -149,7 +149,7 @@ The workaround is to suffix class with an underscore:
 soup.find('a',class_="mw-redirect") # will return first a tag with this class
 ```
 
-### Using CSS selectors with BeautifulSoup
+#### Using CSS selectors with BeautifulSoup
 
 BeautifulSoup also supports use of CSS selectors. This is arguably a better approach, because CSS selectors are generic and not specific to BeautifulSoup. Chances are that you already know how to build CSS selectors. Even if you don’t know CSS selectors, learning CSS selectors would be a good idea as it can help in the future. Even JavaScript scraping packages work well with CSS selectors.
 
@@ -252,7 +252,7 @@ data.append({
 
 Now we are ready to save this dictionary to a file or a database. To keep things simple, let’s begin with a file.
 
-## STEP 4. How to export data to CSV?
+### STEP 4. How to export data to CSV?
 
 Exporting to CSV doesn’t need any installation. The csv module, which is bundled with Python installation, offers this functionality.
 
@@ -278,7 +278,7 @@ writer.writerow(item)
 
 The data is exported to a CSV file. This is the last step of building a web scraper in Python.
 
-## How to build a web scraper in JavaScript
+### How to build a web scraper in JavaScript
 
 Building a web scraper in JavaScript follows the same steps:
 
@@ -287,7 +287,7 @@ Building a web scraper in JavaScript follows the same steps:
 3. Extract desired data.
 4. Save the data.
 
-### Preparing the Development Environment
+#### Preparing the Development Environment
 
 The only software required are node.js and npm. Once you have node.js setup, open terminal and create a new node project:
 
@@ -303,7 +303,7 @@ npm install axios cheerio json2csv
 
 Now let’s move on to the first step.
 
-## STEP 1. How to get the HTML?
+### STEP 1. How to get the HTML?
 
 The HTML page can be fetched by the package ```axios```.
 
@@ -331,7 +331,7 @@ const response = await axios.get(url);
 
 Once this line executes, the response will contain the HTML that we need.
 
-## STEP 2. How to parse the HTML?
+### STEP 2. How to parse the HTML?
 
 For parsing, the package that can be used is ```cheerio```.
 
@@ -345,7 +345,7 @@ Note here that the HTML is being accessed using the ```data``` attribute of the 
 
 It’s also important to mention that instead of using a variable name, we are using the $ sign. This simply means that we will be able to write jQuery-like syntax and use CSS selectors.
 
-## STEP 3. How to extract data?
+### STEP 3. How to extract data?
 
 The desired data can be extracted using CSS selectors. For example, this line will select all the TOC elements:
 
@@ -366,7 +366,7 @@ TOC.each(function () {
 
 Now we are ready to save the data to a CSV.
 
-## STEP 4. How to export data to CSV?
+### STEP 4. How to export data to CSV?
 
 For exporting data to CSV, we can simply use the package ```json2csv``` because we already have the data in JSON format. This will create the CSV in memory. To write this CSV to disk, we can use the fs package, which does not need to be installed separately.
 
