@@ -237,9 +237,9 @@ We can create dictionary inside the for loop and save everything in a list:
 data = []
 # loop over outer elements
 for item in soup.select('li.toclevel-1'):
-	# Get the toc number element and it’s text
+# Get the toc number element and it’s text
 toc_number = item.select_one('span.tocnumber').text
-	# Get the toc text element and it’s text
+# Get the toc text element and it’s text
 toc_text= item.select_one('span.toctext').text
 # Create a dictionary and add to the list
 data.append({
