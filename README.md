@@ -261,7 +261,7 @@ Here is the code snippet with each line explained:
 import csv
 # open a new file in write mode
 with open('wiki.csv', 'w', newline='') as csvfile:
-	# Specify the column names
+# Specify the column names
 fieldnames = ['TOC Number', 'TOC Text']
 # create a dictionary writer object
 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -269,8 +269,8 @@ writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 writer.writeheaders()
 # run a loop on the data
 for item in data:
-	# Each item in the list is a dictionary
-	# this will be written in one row.
+# Each item in the list is a dictionary
+# this will be written in one row.
 writer.writerow(item)
 ```
 
