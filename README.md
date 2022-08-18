@@ -1,10 +1,16 @@
-# how-to-build-web-scraper
+# How to Build a Web Scraper with Python?
 Step by step guide to building a web scraper with Python
 
+## STEP 1. How to get the HTML?
+The first step to building a web scraper is getting the HTML of a page. We will be using the ```requests``` library to get the HTML. It allows us to send a request and get a response. This can be installed using pip or pip3, depending on your Python installation.
 
 ```bash
 pip install requests
 ```
+
+Now create a new file with extension ```.py``` in your favorite editor and open it. Alternatively, you can also use Jupyter Notebooks or even a Python console. This allows the execution of small code snippets and viewing of the result immediately.
+
+If you are using Jupyter Notebooks, enter these lines in a cell, and execute the cell. If you are using a code editor, enter these lines, save the file, and execute it with Python.
 
 ```python
 import requests
